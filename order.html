@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Nasi Kuning</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar {
+            background-color: #B40F17;
+        }
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+        }
+        .order-form {
+            margin-top: 20px;
+        }
+        .order-card {
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .form-check {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .form-check-input {
+            margin-right: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        .btn-custom {
+            background-color: #B40F17;
+            color: #fff;
+            border: none;
+        }
+        .btn-custom:hover {
+            background-color: #a00d13;
+        }
+        @media (max-width: 576px) {
+            .order-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"><b><i>Mamah Emir</i></b></a>
+        <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon text-white"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Tentang Kami</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <h2 class="text-center mb-4">Form Pemesanan</h2>
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="itemSelection" class="font-weight-bold">Pilih Menu:</label>
+                <div class="order-card">
+                    <div class="form-check">
+                        <input type="checkbox" id="nasiKuning" name="item" value="Nasi Kuning" class="form-check-input">
+                        <label for="nasiKuning" class="form-check-label">Nasi Kuning</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="nasiLengko" name="item" value="Nasi Lengko" class="form-check-input">
+                        <label for="nasiLengko" class="form-check-label">Nasi Lengko</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="gorengan" name="item" value="Gorengan" class="form-check-input">
+                        <label for="gorengan" class="form-check-label">Gorengan</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="tempeGoreng" name="item" value="Tempe Goreng" class="form-check-input">
+                        <label for="tempeGoreng" class="form-check-label">Tempe Goreng</label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="nasiKuningFields" class="order-card hidden">
+                <h5><b><i>Nasi Kuning</i></b></h5>
+                <hr>
+                <div class="form-group">
+                    <label for="quantityNasiKuning">Jumlah Bungkus</label>
+                    <input type="number" class="form-control" id="quantityNasiKuning" placeholder="Berapa bungkus?" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="priceNasiKuning">Harga Per Bungkus</label>
+                    <select id="priceNasiKuning" class="form-control">
+                        <option value="5000">Rp 5.000</option>
+                        <option value="6000">Rp 6.000</option>
+                        <option value="7000">Rp 7.000</option>
+                        <option value="8000">Rp 8.000</option>
+                        <option value="9000">Rp 9.000</option>
+                        <option value="10000">Rp 10.000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="spicyNasiKuning">Pedas?</label>
+                    <select id="spicyNasiKuning" class="form-control">
+                        <option value="Ya">Ya</option>
+                        <option value="Tidak">Tidak</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="additionalNasiKuning">Pesan Tambahan</label>
+                    <textarea id="additionalNasiKuning" class="form-control" rows="3" placeholder="Opsional Boleh Di Isi Atau Tidak"></textarea>
+                </div>
+            </div>
+
+            <div id="nasiLengkoFields" class="order-card hidden">
+                <h5><b><i>Nasi Lengko</i></b></h5>
+                <hr>
+                <div class="form-group">
+                    <label for="quantityNasiLengko">Jumlah</label>
+                    <input type="number" class="form-control" id="quantityNasiLengko" placeholder="Berapa bungkus?" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="priceNasiLengko">Harga Per Bungkus</label>
+                    <select id="priceNasiLengko" class="form-control">
+                        <option value="5000">Rp 5.000</option>
+                        <option value="6000">Rp 6.000</option>
+                        <option value="7000">Rp 7.000</option>
+                        <option value="8000">Rp 8.000</option>
+                        <option value="9000">Rp 9.000</option>
+                        <option value="10000">Rp 10.000</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="spicyNasiLengko">Pedas?</label>
+                    <select id="spicyNasiLengko" class="form-control">
+                        <option value="Ya">Ya</option>
+                        <option value="Tidak">Tidak</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="additionalNasiLengko">Pesan Tambahan</label>
+                    <textarea id="additionalNasiLengko" class="form-control" rows="3" placeholder="Opsional Boleh Di Isi Atau Tidak"></textarea>
+                </div>
+            </div>
+
+            <div id="gorenganFields" class="order-card hidden">
+                <h5><b><i>Gorengan</i></b></h5>
+                <hr>
+                <div class="form-group">
+                    <label for="quantityGorengan">Jumlah</label>
+                    <select id="quantityGorengan" class="form-control">
+                        <script>
+                            for (let i = 1; i <= 30; i++) {
+                                let price = i * 1000;
+                                document.write('<option value="' + i + '" data-price="' + price + '">' + i + ' - Rp. ' + price + '</option>');
+                            }
+                        </script>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="additionalGorengan">Pesan Tambahan</label>
+                    <textarea id="additionalGorengan" class="form-control" rows="3" placeholder="Opsional Boleh Di Isi Atau Tidak"></textarea>
+                </div>
+            </div>
+
+            <div id="tempeGorengFields" class="order-card hidden">
+                <h5><b><i>Tempe Goreng</i></b></h5>
+                <hr>
+                <div class="form-group">
+                    <label for="quantityTempeGoreng">Jumlah</label>
+                    <select id="quantityTempeGoreng" class="form-control">
+                        <script>
+                            for (let i = 1; i <= 30; i++) {
+                                let price = i * 1000;
+                                document.write('<option value="' + i + '" data-price="' + price + '">' + i + ' - Rp. ' + price + '</option>');
+                            }
+                        </script>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="additionalTempeGoreng">Pesan Tambahan</label>
+                    <textarea id="additionalTempeGoreng" class="form-control" rows="3" placeholder="Opsional Boleh Di Isi Atau Tidak"></textarea>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-custom btn-block" onclick="sendToWhatsApp()">Kirim</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.querySelectorAll('input[name="item"]').forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                var selectedItems = Array.from(document.querySelectorAll('input[name="item"]:checked')).map(function(checkbox) {
+                    return checkbox.value;
+                });
+
+                document.getElementById('nasiKuningFields').classList.add('hidden');
+                document.getElementById('nasiLengkoFields').classList.add('hidden');
+                document.getElementById('gorenganFields').classList.add('hidden');
+                document.getElementById('tempeGorengFields').classList.add('hidden');
+
+                selectedItems.forEach(function(item) {
+                    if (item === 'Nasi Kuning') {
+                        document.getElementById('nasiKuningFields').classList.remove('hidden');
+                    } else if (item === 'Nasi Lengko') {
+                        document.getElementById('nasiLengkoFields').classList.remove('hidden');
+                    } else if (item === 'Gorengan') {
+                        document.getElementById('gorenganFields').classList.remove('hidden');
+                    } else if (item === 'Tempe Goreng') {
+                        document.getElementById('tempeGorengFields').classList.remove('hidden');
+                    }
+                });
+            });
+        });
+
+        function sendToWhatsApp() {
+            var selectedItems = Array.from(document.querySelectorAll('input[name="item"]:checked')).map(function(checkbox) {
+                return checkbox.value;
+            });
+
+            var messages = [];
+
+            selectedItems.forEach(function(item) {
+                var message = `Pesan: ${item}`;
+                if (item === 'Nasi Kuning') {
+                    var quantity = document.getElementById('quantityNasiKuning').value;
+                    var price = document.getElementById('priceNasiKuning').value;
+                    var spicy = document.getElementById('spicyNasiKuning').value;
+                    var additional = document.getElementById('additionalNasiKuning').value;
+                    message += `\nJumlah bungkus: ${quantity}\nHarga Per Bungkus: Rp. ${price}\nPedas: ${spicy}\nPesan Tambahan: ${additional}`;
+                } else if (item === 'Nasi Lengko') {
+                    var quantity = document.getElementById('quantityNasiLengko').value;
+                    var price = document.getElementById('priceNasiLengko').value;
+                    var spicy = document.getElementById('spicyNasiLengko').value;
+                    var additional = document.getElementById('additionalNasiLengko').value;
+                    message += `\nJumlah bungkus: ${quantity}\nHarga Per Bungkus: Rp. ${price}\nPedas: ${spicy}\nPesan Tambahan: ${additional}`;
+                } else if (item === 'Gorengan') {
+                    var quantity = document.getElementById('quantityGorengan').value;
+                    var price = quantity * 1000;
+                    var additional = document.getElementById('additionalGorengan').value;
+                    message += `\nJumlah bungkus: ${quantity}\nHarga Per Bungkus: Rp. ${price}\nPesan Tambahan: ${additional}`;
+                } else if (item === 'Tempe Goreng') {
+                    var quantity = document.getElementById('quantityTempeGoreng').value;
+                    var price = quantity * 1000;
+                    var additional = document.getElementById('additionalTempeGoreng').value;
+                    message += `\nJumlah bungkus: ${quantity}\nHarga Per Bungkus: Rp. ${price}\nPesan Tambahan: ${additional}`;
+                }
+                messages.push(message);
+            });
+
+            var finalMessage = messages.join('\n\n');
+            if (finalMessage) {
+                var phoneNumber = '6287784936098';
+                var whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(finalMessage)}`;
+                window.open(whatsappUrl, '_blank');
+            }
+        }
+    </script>
+</body>
+</html>

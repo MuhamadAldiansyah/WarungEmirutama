@@ -1,0 +1,26 @@
+/* styles.css */
+
+/* Hero Section */
+.hero {
+    background: url('../img/banners.png') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    height: 300px; /* Sesuaikan dengan tinggi gambar */
+    width: 100%; /* Memastikan elemen hero melebar penuh */
+}
+
+/* Card Images */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Custom Button */
+.btn-lg {
+    border-radius: 25px;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+}
